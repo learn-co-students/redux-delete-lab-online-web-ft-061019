@@ -8,15 +8,15 @@ class BandInput extends Component {
 
   handleOnChange(event) {
     this.setState({
-      bandName: event.target.value,
+      bandName: event.target.value
     });
   }
 
   handleOnSubmit(event) {
     event.preventDefault();
-    this.props.addBand(this.state.bandName);
+    this.props.dispatch({ type: "ADD_BAND", name: this.state.bandName })
     this.setState({
-      bandName: '',
+      bandName: ''
     });
   }
 
